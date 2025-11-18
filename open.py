@@ -1,9 +1,7 @@
 import requests, os
 from datetime import datetime, timedelta
 from typing import List, Dict, Tuple
-from openai import OpenAI
 from config import NEWSAPI_KEY, RELIABLE_SOURCES, OPENAI_KEY, COINGECKO, NEWSAPI_KEY
-
 from transformers import AutoModelForCausalLM, AutoTokenizer
 import torch
 
@@ -25,7 +23,6 @@ model = AutoModelForCausalLM.from_pretrained(
 )
 model.to(device)
 
-client = OpenAI(api_key=OPENAI_KEY)
 
 def get_market_data():
     data = {}
